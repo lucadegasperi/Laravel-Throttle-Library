@@ -36,5 +36,4 @@ to remove the throttle for a specific key, simply call
 
 ## Licence
 
-Made by Luca Degasperi
-MIT Licence, do whatever you want with it.
+Made by Luca Degasperi under the MIT Licence, do whatever you want with it.
