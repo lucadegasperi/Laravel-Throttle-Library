@@ -2,7 +2,7 @@
 
 Run the following command on the terminal
 
-    $ php artisan bundle:install authority
+    $ php artisan bundle:install throttle
 
 Edit application/bundles.php and add the following lines
 
