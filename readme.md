@@ -26,11 +26,13 @@ Create a new filter into application > routes.php
 		  {
 			   if(Throttle::is_over(Input::get('email')))
 			   {
-			    return redirect::to_signin();
-		    }
+				return Redirect::to('/');
+		    	}
 	    }
 	    return null;	
     });
+
+Replace Input::has('email') with whatever field your login form has to recognize the user.
 
 whenever you need to throttle a route, add the filter in the before key
 
