@@ -1,6 +1,16 @@
 ## How to Install
 
-Copy the file throttle.php to application > libraries
+Run the following command on the terminal
+
+    $ php artisan bundle:install authority
+
+Edit application/bundles.php and add the following lines
+
+    return array(
+    'throttle' => array(
+	    'auto' => true
+	    )
+    )
 
 ## Dependencies
 
@@ -8,9 +18,9 @@ This library uses the Cache class built into Laravel
 
 ## How to Use
 
-Create a new filter into application > filter.php
+Create a new filter into application > routes.php
 
-    'throttling' => function()
+    Route::filter('throttle' => function()
     {
 		  if(Input::has('email'))
 		  {
@@ -20,11 +30,11 @@ Create a new filter into application > filter.php
 		    }
 	    }
 	    return null;	
-    },
+    });
 
 whenever you need to throttle a route, add the filter in the before key
 
-    'GET /login' => array('before' => 'throttling', function(){});
+    'GET /login' => array('before' => 'throttle', function(){});
     
 for increasing the throttle time (after a failed login attempt for example) call the method
 
