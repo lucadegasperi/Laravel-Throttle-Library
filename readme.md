@@ -20,7 +20,7 @@ This library uses the Cache class built into Laravel
 
 Create a new filter into application > routes.php
 
-    Route::filter('throttle' => function()
+    Route::filter('throttle', function()
     {
 		  if(Input::has('email'))
 		  {
